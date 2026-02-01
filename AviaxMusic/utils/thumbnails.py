@@ -5,7 +5,7 @@ import aiohttp
 from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont, ImageOps
 from unidecode import unidecode
 from youtubesearchpython.__future__ import VideosSearch
-from PROMUSIC import app
+from AviaxMusic import app
 from config import YOUTUBE_IMG_URL
 
 def changeImageSize(maxWidth, maxHeight, image):
@@ -134,13 +134,13 @@ async def get_thumb(videoid):
     background = enhancer.enhance(0.6)
     draw = ImageDraw.Draw(background)
 
-    title_font = ImageFont.truetype("PROMUSIC/assets/semibold.ttf", 28)
-    channel_name_font = ImageFont.truetype("PROMUSIC/assets/semibold.ttf", 20)
-    duration_font = ImageFont.truetype("PROMUSIC/assets/semibold.ttf", 18)
+    title_font = ImageFont.truetype("AviaxMusic/assets/semibold.ttf", 28)
+    channel_name_font = ImageFont.truetype("AviaxMusic/assets/semibold.ttf", 20)
+    duration_font = ImageFont.truetype("AviaxMusic/assets/semibold.ttf", 18)
 
 
     # Load your image
-    my_image = Image.open("PROMUSIC/assets/bg.png").convert("RGBA")
+    my_image = Image.open("AviaxMusic/assets/bg.png").convert("RGBA")
 
     # Resize if needed
     my_image = my_image.resize((1280, 720))
@@ -178,3 +178,4 @@ async def get_thumb(videoid):
         pass
     background.save(f"cache/{videoid}_v4.png")
     return f"cache/{videoid}_v4.png"
+
