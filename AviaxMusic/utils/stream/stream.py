@@ -13,7 +13,7 @@ from AviaxMusic.utils.exceptions import AssistantErr
 from AviaxMusic.utils.inline import aq_markup, close_markup, stream_markup
 from AviaxMusic.utils.pastebin import AviaxBin
 from AviaxMusic.utils.stream.queue import put_queue, put_queue_index
-from AviaxMusic.utils.thumbnails import gen_thumb
+from AviaxMusic.utils.thumbnails import get_thumb
 
 
 async def stream(
@@ -465,3 +465,4 @@ async def stream(
             db[chat_id][0]["mystic"] = run
             db[chat_id][0]["markup"] = "tg"
             await mystic.delete()
+
